@@ -1,25 +1,22 @@
 {
-  "name": "react-datatable",
+  "name": "react-data-table",
   "version": "1.0.0",
   "description": "custom and simple data table for react js",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "keywords": ["react data table", "simple data table", "react table", "data table"],
+  "main": "src/index.js",
+  "author": "AbhishekSoni",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Abhishek7664/reacttable.git"
   },
-  "keywords": [
-    "react data",
-    "table simple data table",
-    "react table",
-    "data table"
-  ],
-  "author": "AzureAD\\AbhishekSoni",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Abhishek7664/reacttable/issues"
   },
-  "homepage": "https://github.com/Abhishek7664/reacttable#readme"
+  "homepage": "https://github.com/Abhishek7664/reacttable#readme",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.3"
+  }
 }
