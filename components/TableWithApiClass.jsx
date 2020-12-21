@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { PageSizeComponent } from "./pagesize";
 import { PaginationComponent } from "./pagination";
 
-class TableWithApiClass extends Component {
+export default class DatatableWithApi extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -347,5 +347,3 @@ class TableWithApiClass extends Component {
     );
   }
 }
-
-export default TableWithApiClass;

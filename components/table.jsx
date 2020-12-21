@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { PaginationComponent } from "./pagination";
 import { PageSizeComponent } from "./pagesize";
 
-export const TableComponent = ({
+export const DatatableComponent = ({
   header,
   dataArr = [],
   loading = false,
