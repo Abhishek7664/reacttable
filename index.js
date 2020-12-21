@@ -1,6 +1,22 @@
-import { DatatableComponent } from './components/table';
-import DatatableWithApi from './components/TableWithApiClass';
-import { PaginationComponent } from "./components/pagination";
+var path = require('path');
+let webpack = require("webpack");
 
-export default DatatableComponent;
-export { DatatableWithApi, PaginationComponent };
+module.exports = {
+    entry: {
+        app: './app.js',
+        vendor: ["react","react-dom"]
+    },
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, '../public')
+    },
+    module: {
+        rules: [{
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            use: {
+                loader: 'babel-loader?cacheDirectory=true',
+            }
+        }]
+    }
+};
