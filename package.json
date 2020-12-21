@@ -2,7 +2,12 @@
   "name": "custom-react-data-table",
   "version": "1.0.1",
   "description": "custom and simple data table for react js",
-  "keywords": ["react data table", "simple data table", "react table", "data table"],
+  "keywords": [
+    "react data table",
+    "simple data table",
+    "react table",
+    "data table"
+  ],
   "main": "index.js",
   "author": "AbhishekSoni",
   "license": "ISC",
@@ -16,5 +21,14 @@
   "homepage": "https://github.com/Abhishek7664/reacttable#readme",
   "peerDependencies": {
     "react": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.11.0"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1"
   }
 }
