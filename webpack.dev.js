@@ -5,7 +5,7 @@ const { merge } = require("webpack-merge");
 module.exports = merge(common, {
     mode: "development",
     output: {
-        filename: 'index.js',
-        path: path.resolve(__dirname + '/')
+        filename: 'reacttable.js',
+        path: path.resolve(__dirname + '/dist_dev')
     }
 });

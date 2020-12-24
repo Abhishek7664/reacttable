@@ -1,5 +1,6 @@
+import { DatatableComponent } from './table';
+import DatatableWithApi from './TableWithApiClass';
+import { PaginationComponent } from "./pagination";
 
-export const ShowAlertMsg = () => {
-    alert("hello");
-};
-console.log("test datatable");
+export default DatatableComponent;
+export  { DatatableWithApi, PaginationComponent };
