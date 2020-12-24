@@ -1,7 +1,9 @@
 /src
 /main
 /dist_dev
+
 .babelrc
+.gitignore
 webpack.common.js
 webpack.dev.js
 webpack.prod.js
