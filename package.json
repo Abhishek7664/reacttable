@@ -1,6 +1,6 @@
 {
   "name": "custom-react-data-table",
-  "version": "1.0.8",
+  "version": "1.0.11",
   "description": "custom and simple data table for react js",
   "keywords": [
     "react data table",
@@ -9,6 +9,10 @@
     "data table"
   ],
   "main": "dist/index.js",
+  "scripts": {
+    "dev": "webpack --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
   "author": "AbhishekSoni",
   "license": "ISC",
   "repository": {
@@ -23,21 +27,19 @@
     "react": "^16.13.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
-    "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "babel-loader": "^8.2.2",
+    "babel-plugin-lodash": "^3.3.4",
+    "babel-plugin-react-transform": "^3.0.0",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^5.0.1",
     "react": "^16.13.1",
     "style-loader": "^2.0.0",
     "webpack": "^5.11.0",
     "webpack-cli": "^4.2.0",
-    "webpack-merge": "^5.7.3",
-    "clean-webpack-plugin": "^3.0.0"
-  },
-  "scripts": {
-    "dev": "webpack --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "webpack-merge": "^5.7.3"
   }
 }

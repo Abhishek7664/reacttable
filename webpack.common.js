@@ -2,9 +2,10 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     context: __dirname + '/src',
-    entry: {
-        javascript: "./app.js"
-    },
+    entry: "./table.js",
+    // entry: {
+    //     javascript: "./table.js"
+    // },
     module: {
         rules: [
             {
@@ -17,6 +18,14 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 loader: 'babel-loader',
+                exclude: /node_modules/,
+                options: {
+                    presets: ['@babel/react', '@babel/preset-env'],
+                    plugins: ['@babel/proposal-class-properties']
+                }
+                // options: {
+                //     presets: ["es2015"]
+                // }
             }
         ]
     },

@@ -6,6 +6,7 @@ module.exports = merge(common, {
     mode: "development",
     output: {
         filename: 'reacttable.js',
-        path: path.resolve(__dirname + '/dist_dev')
+        path: path.resolve(__dirname + '/dist_dev'),
+        libraryTarget: "commonjs2"
     }
 });

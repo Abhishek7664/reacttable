@@ -1,6 +1,6 @@
 import { DatatableComponent } from './table';
-import DatatableWithApi from './TableWithApiClass';
-import { PaginationComponent } from "./pagination";
+// import DatatableWithApi from './TableWithApiClass';
+// import { PaginationComponent } from "./pagination";
 
 export default DatatableComponent;
-export  { DatatableWithApi, PaginationComponent };
+// export  { DatatableWithApi, PaginationComponent };
