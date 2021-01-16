@@ -72,7 +72,7 @@ input {
 
 .pagination_ul li {
   /* padding: 6px 12px; */
-  padding: 7px 12px 2px 12px;
+  padding: 7px 12px 7px 12px;
   border-radius: 7px;
   cursor: pointer;
   display: list-item;
@@ -98,21 +98,21 @@ input {
 }
 
 table thead .sorting {
-  background-image: url(/img/icons-sort-100.png);
+  background-image: url(https://i.imgur.com/LOjzQIy.png);
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: center right;
   background-size: 15px 16px;
 }
 table thead .sort-up {
-  background-image: url(/img/icons-up-arrow-100.png);
+  background-image: url(https://i.imgur.com/yc5BQ8d.png);
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: center right;
   background-size: 15px 16px;
 }
 table thead .sort-down {
-  background-image: url(/img/icons-down-arrow-100.png);
+  background-image: url(https://i.imgur.com/ZWpfo13.png);
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: center right;

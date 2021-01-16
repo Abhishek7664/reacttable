@@ -2,19 +2,19 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     context: __dirname + '/src',
-    entry: "./table.js",
+    entry: "./TableWithApiClass.js",
     // entry: {
     //     javascript: "./table.js"
     // },
     module: {
         rules: [
-            {
-                test: /\.css$/,
-                use: [
-                    "style-loader",
-                    "css-loader"
-                ]
-            },
+            // {
+            //     test: /\.css$/,
+            //     use: [
+            //         "style-loader",
+            //         "css-loader"
+            //     ]
+            // },
             {
                 test: /\.(js|jsx)$/,
                 loader: 'babel-loader',

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { PaginationComponent } from "./pagination";
 import { PageSizeComponent } from "./pagesize";
 
-const DatatableComponent = ({
+export default function DatatableComponent({
   header,
   dataArr = [],
   loading = false,
@@ -16,7 +16,7 @@ const DatatableComponent = ({
     pageSizeArr: [10, 20, 50, 100, 250],
   },
   showTotalRecord = { bottom: true },
-}) => {
+}) {
   showPageSize.defaultValue = showPageSize.defaultValue
     ? showPageSize.defaultValue
     : 10;
@@ -167,10 +167,10 @@ const DatatableComponent = ({
                   sort_updown.order === ""
                     ? sortclass
                     : sort_updown.field === field_val
-                    ? sort_updown.order === "up"
-                      ? "sort-down"
-                      : "sort-up"
-                    : sortclass;
+                      ? sort_updown.order === "up"
+                        ? "sort-down"
+                        : "sort-up"
+                      : sortclass;
                 // sortclass = el.return ? "" : sortclass;
 
                 return (
@@ -232,28 +232,28 @@ const DatatableComponent = ({
                 );
               })
             ) : (
-              <tr>
-                <td
-                  colSpan={header ? header.length : 10}
-                  className="text-center"
-                >
-                  {loadingPage ? (
-                    <div>
-                      <i
-                        className="fa fa-spinner fa-pulse"
-                        aria-hidden="true"
-                      ></i>{" "}
+                <tr>
+                  <td
+                    colSpan={header ? header.length : 10}
+                    className="text-center"
+                  >
+                    {loadingPage ? (
+                      <div>
+                        <i
+                          className="fa fa-spinner fa-pulse"
+                          aria-hidden="true"
+                        ></i>{" "}
                       Loading...
-                    </div>
-                  ) : (
-                    "No records found"
-                  )}
-                </td>
-              </tr>
-            )
+                      </div>
+                    ) : (
+                        "No records found"
+                      )}
+                  </td>
+                </tr>
+              )
           ) : (
-            ""
-          )}
+              ""
+            )}
         </tbody>
       </table>
 
@@ -294,5 +294,3 @@ const DatatableComponent = ({
     </div>
   );
 };
-
-export default DatatableComponent;

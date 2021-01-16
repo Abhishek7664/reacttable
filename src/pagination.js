@@ -15,7 +15,7 @@ export const PaginationComponent = ({
     active: false,
     disabled,
     label: paginationImg && paginationImg.dleft_tooltip ? paginationImg.dleft_tooltip : "First Page",
-    image: paginationImg && paginationImg.doubleLeftImg ? paginationImg.doubleLeftImg : "img/icons-double-left-100.png",
+    image: paginationImg && paginationImg.doubleLeftImg ? paginationImg.doubleLeftImg : "https://i.imgur.com/kewElgI.png",
     className: "border_none",
   });
   paginationArr.push({
@@ -24,7 +24,7 @@ export const PaginationComponent = ({
     active: false,
     disabled,
     label: paginationImg && paginationImg.left_tooltip ? paginationImg.left_tooltip : "Previous Page",
-    image: paginationImg && paginationImg.leftImg ? paginationImg.leftImg : "img/icons-left-100.png",
+    image: paginationImg && paginationImg.leftImg ? paginationImg.leftImg : "https://i.imgur.com/TA6SixA.png",
     className: "border_none",
   });
   for (let i = 1; i <= totalpage; i++) {
@@ -58,7 +58,7 @@ export const PaginationComponent = ({
     active: false,
     disabled,
     label: paginationImg && paginationImg.right_tooltip ? paginationImg.right_tooltip : "Next Page",
-    image: paginationImg && paginationImg.rightImg ? paginationImg.rightImg : "img/icons-right-100.png",
+    image: paginationImg && paginationImg.rightImg ? paginationImg.rightImg : "https://i.imgur.com/gSzkqJG.png",
     className: "border_none"
   });
   paginationArr.push({
@@ -67,7 +67,7 @@ export const PaginationComponent = ({
     active: false,
     disabled,
     label: paginationImg && paginationImg.dright_tooltip ? paginationImg.dright_tooltip : "Last Page",
-    image: paginationImg && paginationImg.doubleRightImgimg ? paginationImg.doubleRightImgimg : "img/icons-double-right-100.png",
+    image: paginationImg && paginationImg.doubleRightImg ? paginationImg.doubleRightImg : "https://i.imgur.com/9z8ThZo.png",
     className: "border_none",
   });
 
