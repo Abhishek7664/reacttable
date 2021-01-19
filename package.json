@@ -1,6 +1,6 @@
 {
   "name": "custom-react-data-table",
-  "version": "1.1.10",
+  "version": "1.1.11",
   "description": "custom and simple data table for react js",
   "keywords": [
     "react data table",
@@ -14,7 +14,7 @@
     "build": "webpack --config webpack.prod.js"
   },
   "author": "AbhishekSoni",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Abhishek7664/reacttable.git"
