@@ -3,10 +3,17 @@
   "version": "1.1.11",
   "description": "custom and simple data table for react js",
   "keywords": [
+    "react",
+    "table",
+    "react table",
+    "react-table",
     "react data table",
     "simple data table",
+    "custom-react-data-table",
     "react table",
-    "data table"
+    "data table",
+    "custom",
+    "custom table"
   ],
   "main": "dist/index.js",
   "scripts": {
