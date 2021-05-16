@@ -23,6 +23,11 @@ export default class DatatableWithApi extends Component {
         pageSizeArr: [10, 20, 50, 100, 250],
       },
       showTotalRecord: { bottom: true, value: null },
+      tableClass: "",
+      tableHeadClass: "",
+      tableHeadRowClass: "",
+      tableBodyClass: "",
+      norecordsfound: { title: "No record's found", align: "center" },
     };
   }
   componentWillReceiveProps(nextProps) {
@@ -48,6 +53,21 @@ export default class DatatableWithApi extends Component {
         showTotalRecord: nextProps.showTotalRecord
           ? nextProps.showTotalRecord
           : this.state.showTotalRecord,
+        tableClass: nextProps.tableClass
+          ? nextProps.tableClass
+          : this.state.tableClass,
+        tableHeadClass: nextProps.tableHeadClass
+          ? nextProps.tableHeadClass
+          : this.state.tableHeadClass,
+        tableHeadRowClass: nextProps.tableHeadRowClass
+          ? nextProps.tableHeadRowClass
+          : this.state.tableHeadRowClass,
+        tableBodyClass: nextProps.tableBodyClass
+          ? nextProps.tableBodyClass
+          : this.state.tableBodyClass,
+        norecordsfound: nextProps.norecordsfound
+          ? nextProps.norecordsfound
+          : this.state.norecordsfound,
       });
     }
   }
@@ -149,6 +169,11 @@ export default class DatatableWithApi extends Component {
       page,
       dataArr,
       loading,
+      tableClass,
+      tableHeadClass,
+      tableHeadRowClass,
+      tableBodyClass,
+      norecordsfound,
     } = this.state;
 
     let totalpage = dataArr
@@ -204,9 +229,9 @@ export default class DatatableWithApi extends Component {
           </div>
         )}
 
-        <table>
-          <thead>
-            <tr>
+        <table className={tableClass ? tableClass : ""}>
+          <thead className={tableHeadClass ? tableHeadClass : ""}>
+            <tr className={tableHeadRowClass ? tableHeadRowClass : ""}>
               {header &&
                 header.map((el, key) => {
                   let action_field = el.field ? el.field : "field_" + key;
@@ -222,11 +247,12 @@ export default class DatatableWithApi extends Component {
                       : sortclass;
                   // sortclass = el.return ? "" : sortclass;
                   sortclass = el.serial ? "" : sortclass;
+                  let thClass = el.thClass ? " " + el.thClass : "";
 
                   return (
                     <th
                       key={key}
-                      className={sortclass}
+                      className={sortclass + thClass}
                       onClick={() => {
                         if (sortclass !== "") {
                           this.handleSorting(action_field);
@@ -239,12 +265,16 @@ export default class DatatableWithApi extends Component {
                 })}
             </tr>
           </thead>
-          <tbody>
+          <tbody className={tableBodyClass ? tableBodyClass : ""}>
             {!loading && dataArr ? (
               dataArr.length > 0 ? (
                 dataArr.map((el, key) => {
                   return (
-                    <tr key={key} style={el.trStyle ? el.trStyle : {}}>
+                    <tr
+                      key={key}
+                      style={el.trStyle ? el.trStyle : {}}
+                      className={el.rowClass ? el.rowClass : ""}
+                    >
                       {header &&
                         header.map((el2, key2) => {
                           if (el2.serial) {
@@ -262,6 +292,7 @@ export default class DatatableWithApi extends Component {
                               <td
                                 key={key2}
                                 style={el2.tdStyle ? el2.tdStyle(el) : {}}
+                                className={el.tdClass ? el.tdClass : ""}
                               >
                                 {el2.return(el)}
                               </td>
@@ -271,6 +302,7 @@ export default class DatatableWithApi extends Component {
                             <td
                               key={key2}
                               style={el2.tdStyle ? el2.tdStyle(el) : {}}
+                              className={el.tdClass ? el.tdClass : ""}
                             >
                               {el[el2.field] || el[el2.field] === 0
                                 ? el[el2.field]
@@ -286,6 +318,11 @@ export default class DatatableWithApi extends Component {
                   <td
                     colSpan={header ? header.length : 10}
                     className="text-center"
+                    style={{
+                      textAlign: norecordsfound.align
+                        ? norecordsfound.align
+                        : "",
+                    }}
                   >
                     {loading ? (
                       <div>
@@ -295,8 +332,10 @@ export default class DatatableWithApi extends Component {
                         ></i>{" "}
                         Loading...
                       </div>
+                    ) : norecordsfound.title ? (
+                      norecordsfound.title
                     ) : (
-                      "No records found"
+                      ""
                     )}
                   </td>
                 </tr>

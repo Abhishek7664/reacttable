@@ -1,9 +1,8 @@
-# React Data Table
+# React API Data Table
 
-React Data Table is a simple and custom table with the logically features, you can easily manage your data table by search operation, pagination, page size change, sorting column and render your custom column with your own style. we are made with a core style but you can change everything with your own styles even you can change the icon of the pagination, sorting, changeable position of the pagination/page size with the visible and hide feature, and text renders with different-2 languages. Overall it's flexible with any website, cms, mis etc. 
+React API Data Table is a simple and custom table with the logical features. You can easily manage your data table by search operation, pagination, page size change, sorting column and render your custom column with your own style. We are made with a core style but you can change everything with your own styles even you can change the icon of the pagination, sorting, changeable position of the pagination/page size with the visible and hide feature, and text renders with different-2 languages. Overall it's flexible with any website, cms, mis etc.
 
 ![Sample data table](https://i.imgur.com/hpAOD5T.png)
-
 
 ### Installation
 
@@ -95,8 +94,8 @@ export default class App extends Component {
     render() {
 
         let tableHeadArray = [
-            { title: "S.no.", serial: true },
-            { title: "Name", field: "name", sorting: true },
+            { title: "S.no.", serial: true, thClass: "firstTH" },
+            { title: "Name", field: "name", sorting: true, thClass: "secondTH" },
             {
                 title: "Url",
                 field: "url",
@@ -156,6 +155,10 @@ export default class App extends Component {
                         dright_tooltip: "last page"
                     }}
                     showTotalRecord={{ top: true, bottom: true, value: this.state.count }}
+                    tableClass={"table"}
+                    tableHeadClass={"table head"}
+                    tableHeadRowClass={"table rowhead"}
+                    tableBodyClass={"table body"}
                 />}
             </div>
         );
@@ -165,17 +168,45 @@ export default class App extends Component {
 
 ### Props
 
-| Props |Type | Details |
-| ------ | ------ | ------ |
-| header | Array | An array of the table head |
-| dataArr | Array | An array of the table data |
-| pageChangeCallback | Function | Page change callback |
-| fieldSortingCallback | Function | Sorting column callback |
-| filterTableCallback | Function | On search filter table callback |
-| pageSizeCallback | Function | On page size change callback |
-| showPageSize | page | Page size data object |
-| showPagination | Object | Pagination data object |
-| showTotalRecord | Object | Total record of the table object |
+| Props | Object Keys |Type | Details | e.g.| 
+| ------ | ------ | ------ | ------ | ------ |
+| dataArr (mandatory) | | Array | An array of the table data | |
+| header (mandatory) | | Array | An array of the table head object | |
+| | title (mandatory) | String | Custom table coloum title | "S.No." |
+| | serial (optional) | Boolean | If true show the serial number of the record | |
+| | field (mandatory) | String | Data array object keys | if data array is [{name:"abc"}{name:"def"}] then field is 'name' |
+| | sorting (optional) | Boolean | If true show the sorting option to related field ||
+| | thClass (optional) | String | for th tag class | |
+| | tdStyle (optional) | Callback Function | This function is return special case style and record object is an attribute of this function | tdStyle: (obj) => { let style = {}; if (obj.url.indexOf("1") !== -1) { style = { background: "#ffe047" }; } return style; } |
+| | return (optional) | Callback Function | This function is return custom design data for a cell and record object is an attribute of this function | e.g.1: return: (obj) => {return <a href={`${obj.url}`}>{obj.url}</a>; } e.g.2: return: (obj) => { return ( <> <button onClick={() => console.log("edit obj =", obj)}>Edit</button></button></>);} |
+| pageChangeCallback (mandatory) | | Function | Page change callback | |
+| fieldSortingCallback (optional) | | Function | Sorting column callback | |
+| filterTableCallback (optional) | | Function | On search filter table callback | |
+| pageSizeCallback | | Function | On page size change callback | |
+| showPageSize (optional) | | Object | Page size data object | |
+| | title (optional) | String | Custom page size title | |
+| | defaultValue (optional) | Integer | Page size default value | |
+| | pageSizeArr (optional) | Integer Array | Page size array for select page size | [10,20,50] |
+| | top (optional) | Boolean | page size on top if true |
+| | bottom (optional) | Boolean | page size on bottom if true |
+| showPagination (optional) | | Object | Pagination data object |
+| | top (optional) | Boolean | Pagination on top if true |
+| | bottom (optional) | Boolean | Pagination on bottom if true |
+| | dleft_tooltip (optional) | String | Double left button tooltip title | "first page" |
+| | left_tooltip (optional) | String | Left button tooltip title | "previous page" |
+| | right_tooltip (optional) | String | Right button tooltip title | "next page" |
+| | dright_tooltip (optional) | String | Double right button tooltip title | "last page" |
+| | doubleLeftImg (optional) | String | First page button image/icon url | |
+| | leftImg (optional) | String | Previous page image/icon url | |
+| | rightImg (optional) | String | Right image/icon url | |
+| | doubleRightImg (optional) | String | Right image/icon url | |
+| showTotalRecord (mandatory) | | Object | Total record of the table object | |
+| | top (optional) | Boolean | Total Records show on top if true |
+| | bottom (optional) | Boolean | Total Records show on bottom if true |
+| | value (mandatory) | String/Integer | Total Records value | |
+| norecordsfound (optional) | | Object | show the no records title and align the text| { align: "center", title: "no records"} |
+| | title (mandatory) | String | Total Records value | |
+| | align (optional) | String | align of the text - center, left and right |  |
 
 License
 ----
