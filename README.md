@@ -159,6 +159,7 @@ export default class App extends Component {
                     tableHeadClass={"table head"}
                     tableHeadRowClass={"table rowhead"}
                     tableBodyClass={"table body"}
+                    norecordsfound={{ align: "center", title: "no records"}}
                 />}
             </div>
         );
