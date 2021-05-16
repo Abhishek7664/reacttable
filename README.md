@@ -1,4 +1,10 @@
 # React API Data Table
+##### `Minimum pack sizes`
+
+[![npm][npm-image]][npm-url]
+
+[npm-image]: https://i.imgur.com/o41UDR0.png
+[npm-url]: https://www.npmjs.com/package/custom-react-data-table
 
 React API Data Table is a simple and custom table with the logical features. You can easily manage your data table by search operation, pagination, page size change, sorting column and render your custom column with your own style. We are made with a core style but you can change everything with your own styles even you can change the icon of the pagination, sorting, changeable position of the pagination/page size with the visible and hide feature, and text renders with different-2 languages. Overall it's flexible with any website, cms, mis etc.
 
