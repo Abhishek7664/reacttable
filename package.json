@@ -1,20 +1,22 @@
 {
   "name": "custom-react-data-table",
-  "version": "1.2.1",
+  "version": "1.3.1",
   "description": "custom and simple data table for react js with api",
   "keywords": [
     "react",
     "table",
-    "react table",
-    "react-table",
+    "api",
+    "custom",
+    "data",
+    "simple",
+    "cell",
+    "minimal",
+    "minimum",
+    "package",
     "react data table",
     "simple data table",
     "api data table",
-    "custom-react-data-table",
-    "react table",
-    "data table",
-    "custom",
-    "custom table"
+    "custom-react-data-table"
   ],
   "main": "index.js",
   "scripts": {
